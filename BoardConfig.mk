@@ -59,6 +59,8 @@ TARGET_SPECIFIC_HEADER_PATH := device/samsung/i9300/include
 
 # TWRP
 DEVICE_RESOLUTION := 720x1280
+#Use default graphics.c overriding the variable in BoardCommonConfig of smdk4412-common
+BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/i9300/recovery/graphics.c
 
 # inherit from the proprietary version
 -include vendor/samsung/i9300/BoardConfigVendor.mk
