@@ -2614,11 +2614,16 @@ static int adev_set_mic_mute(struct audio_hw_device *dev, bool state)
 
     struct m0_audio_device *adev = (struct m0_audio_device *)dev;
 
+<<<<<<< HEAD
     headset_on = adev->out_device & AUDIO_DEVICE_OUT_WIRED_HEADSET;
     headphone_on = adev->out_device & AUDIO_DEVICE_OUT_WIRED_HEADPHONE;
     speaker_on = adev->out_device & AUDIO_DEVICE_OUT_SPEAKER;
     earpiece_on = adev->out_device & AUDIO_DEVICE_OUT_EARPIECE;
     bt_on = adev->out_device & AUDIO_DEVICE_OUT_ALL_SCO;
+=======
+    if (adev->mode == AUDIO_MODE_IN_CALL)
+            ril_set_mic_mute(&adev->ril, state);
+>>>>>>> 9835740... audio: forward call mute to RIL client interface
 
     adev->mic_mute = state;
 
