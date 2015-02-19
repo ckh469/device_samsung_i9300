@@ -12,10 +12,10 @@
     "revision": "android-5.0"
   },
   {
-    "remote": "omnirom",
+    "remote": "github",
     "repository": "android_device_samsung_smdk4412-common",
     "target_path": "device/samsung/smdk4412-common",
-    "revision": "android-5.0"
+    "revision": "omni-wip"
   },
   {
     "remote": "omnirom",
