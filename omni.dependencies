@@ -13,7 +13,7 @@
   },
   {
     "remote": "github",
-    "repository": "android_device_samsung_smdk4412-common",
+    "repository": "mcgi5sr2/device_samsung_smdk4412-common",
     "target_path": "device/samsung/smdk4412-common",
     "revision": "omni-wip"
   },
