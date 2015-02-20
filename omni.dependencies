@@ -1,15 +1,15 @@
 [
   {
-    "remote": "omnirom",
-    "repository": "android_kernel_samsung_smdk4412",
+    "remote": "github",
+    "repository": "mcgi5sr2/kernel_samsung_smdk4412",
     "target_path": "kernel/samsung/smdk4412",
-    "revision": "android-5.0"
+    "revision": "lp5.0-wip"
   },
   {
-    "remote": "omnirom",
-    "repository": "android_hardware_samsung",
+    "remote": "github",
+    "repository": "mcgi5sr2/hardware_samsung",
     "target_path": "hardware/samsung",
-    "revision": "android-5.0"
+    "revision": "omni-wip"
   },
   {
     "remote": "github",
