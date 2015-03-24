@@ -13,7 +13,7 @@
         "repository": "mcgi5sr2/hardware_samsung",
         "target_path": "hardware/samsung",
         "branch": "lp5.0-wip"
-    },git
+    },
        "remote": "github",
         "repository": "CyanogenMod/android_packages_apps_SamsungServiceMode",
         "target_path": "packages/apps/SamsungServiceMode",
