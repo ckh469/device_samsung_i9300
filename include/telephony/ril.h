@@ -146,7 +146,8 @@ typedef enum {
     RADIO_TECH_LTE = 14,
     RADIO_TECH_HSPAP = 15, // HSPA+
     RADIO_TECH_GSM = 16, // Only supports voice
-    RADIO_TECH_TD_SCDMA = 17
+    RADIO_TECH_TD_SCDMA = 17,
+    RADIO_TECH_DCHSPAP = 30
 } RIL_RadioTechnology;
 
 // Do we want to split Data from Voice and the use
@@ -4781,6 +4782,53 @@ typedef RIL_RadioState (*RIL_RadioStateRequest)();
 #define RIL_UNSOL_UTS_GET_UNREAD_SMS_STATUS 11031
 #define RIL_UNSOL_MIP_CONNECT_STATUS 11032
 
+/***********************************************************************/
+
+
+#if defined(ANDROID_MULTI_SIM)
+/**
+ * RIL_Request Function pointer
+ *
+ * @param request is one of RIL_REQUEST_*
+ * @param data is pointer to data defined for that RIL_REQUEST_*
+ *        data is owned by caller, and should not be modified or freed by callee
+ * @param t should be used in subsequent call to RIL_onResponse
+ * @param datalen the length of data
+ *
+ */
+typedef void (*RIL_RequestFunc) (int request, void *data,
+                                    size_t datalen, RIL_Token t, RIL_SOCKET_ID socket_id);
+
+/**
+ * This function should return the current radio state synchronously
+ */
+typedef RIL_RadioState (*RIL_RadioStateRequest)(RIL_SOCKET_ID socket_id);
+
+#else
+/* Backward compatible */
+
+/**
+ * RIL_Request Function pointer
+ *
+ * @param request is one of RIL_REQUEST_*
+ * @param data is pointer to data defined for that RIL_REQUEST_*
+ *        data is owned by caller, and should not be modified or freed by callee
+ * @param t should be used in subsequent call to RIL_onResponse
+ * @param datalen the length of data
+ *
+ */
+typedef void (*RIL_RequestFunc) (int request, void *data,
+                                    size_t datalen, RIL_Token t);
+
+/**
+ * This function should return the current radio state synchronously
+ */
+typedef RIL_RadioState (*RIL_RadioStateRequest)();
+
+#endif
+
+
+>>>>>>> 8c3f84d... omap4-common: update RIL header to v10
 /**
  * This function returns "1" if the specified RIL_REQUEST code is
  * supported and 0 if it is not
