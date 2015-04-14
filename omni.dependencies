@@ -3,7 +3,7 @@
     "remote": "github",
     "repository": "mcgi5sr2/kernel_samsung_smdk4412",
     "target_path": "kernel/samsung/smdk4412",
-    "revision": "lp5.0-wip"
+    "revision": "omni-wip"
   },
   {
     "remote": "github",
