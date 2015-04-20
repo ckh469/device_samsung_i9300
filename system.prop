@@ -2,7 +2,8 @@
 # system.prop for i9300
 #
 
-dalvik.vm.dexopt-data-only=1
+dalvik.vm.image-dex2oat-filter=everything
+dalvik.vm.dex2oat-filter=everything
 rild.libpath=/system/lib/libsec-ril.so
 rild.libargs=-d /dev/ttyS0
 ro.sf.lcd_density=320

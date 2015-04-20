@@ -85,11 +85,13 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
 
-# RIL
+# RIL and system props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.telephony.ril_class=SamsungExynos4RIL \
     ro.telephony.call_ring.multiple=false \
-    ro.telephony.call_ring.delay=3000
+    ro.telephony.call_ring.delay=3000 \
+    dalvik.vm.image-dex2oat-filter=everything \
+    dalvik.vm.dex2oat-filter=everything
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
